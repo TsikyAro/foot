@@ -1,0 +1,10 @@
+com\example\foot\controllers\SimpleController.class
+com\example\foot\repository\VoitureBaseRepository.class
+com\example\foot\model\Voiture.class
+com\example\foot\repository\UsersRepository.class
+com\example\foot\model\Users.class
+com\example\foot\model\Data.class
+com\example\foot\model\Home.class
+com\example\foot\service\UsersService.class
+com\example\foot\DemoApplication.class
+com\example\foot\model\VoitureBase.class
