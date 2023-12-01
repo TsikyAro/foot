@@ -52,7 +52,9 @@ public class Equipe {
                 Equipe terre = new Equipe(res.getInt(1),res.getString(2),res.getString(3),res.getInt(4),res.getDouble(5),res.getInt(6),res.getInt(7),res.getDouble(8),res.getDouble(9),res.getDouble(10),res.getDouble(11),res.getInt(12));
                 liste.add(terre);
             }
+            stm.close();
             con.close();
+            
         }catch (Exception e) {
             e.printStackTrace();
         }
