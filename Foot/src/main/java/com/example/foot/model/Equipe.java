@@ -5,6 +5,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+
 @Entity
 @Table(name="Equipe")
 public class Equipe {
@@ -34,10 +39,31 @@ public class Equipe {
     double note;
     @Column(name = "type")
     int type;
-
+    public Equipe [] selectEquipe(int type){
+        Connexion c = new Connexion();
+        ArrayList<Equipe> liste = new ArrayList<Equipe>();
+        try{
+            Connection con = c.login();
+            Statement stm=con.createStatement();
+            String sql = "SELECT * FROM \"public\".\"Equipe\" where type ="+type;
+            System.out.println(sql);
+            ResultSet res=stm.executeQuery(sql);
+            while (res.next()){
+                Equipe terre = new Equipe(res.getInt(1),res.getString(2),res.getString(3),res.getInt(4),res.getDouble(5),res.getInt(6),res.getInt(7),res.getDouble(8),res.getDouble(9),res.getDouble(10),res.getDouble(11),res.getInt(12));
+                liste.add(terre);
+            }
+            con.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        Equipe[] terra = new Equipe[liste.size()];
+        liste.toArray(terra);
+        return terra;
+    }
     public Equipe() {
     }
-    public Equipe(String nomequipe, String competition, int buts, double tirpm, int rouge, int jaune, double possession, double passeReussi, double aerienGagne, double note, int type) {
+    public Equipe(int idEquipe,String nomequipe, String competition, int buts, double tirpm, int rouge, int jaune, double possession, double passeReussi, double aerienGagne, double note, int type) {
+        this.idEquipe = idEquipe;
         this.nomequipe = nomequipe;
         this.competition = competition;
         this.buts = buts;

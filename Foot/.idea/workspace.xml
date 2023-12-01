@@ -5,34 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="488be7a3-1f8c-4177-97ee-f5710748494c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/foot/model/Equipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/foot/model/Generale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/foot/repository/EquipeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/foot/repository/GeneraleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/GestionVehicule/DemoApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/GestionVehicule/controllers/SimpleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/GestionVehicule/database/script.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/GestionVehicule/model/Data.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/GestionVehicule/model/Home.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/GestionVehicule/model/Users.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/GestionVehicule/model/Voiture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/GestionVehicule/model/VoitureBase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/GestionVehicule/repository/UsersRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/GestionVehicule/repository/VoitureBaseRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/GestionVehicule/service/HomeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/GestionVehicule/service/UsersService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/GestionVehicule/view/home.html" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/foot/model/Connexion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/foot/controllers/SimpleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/foot/controllers/SimpleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/foot/database/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/foot/database/script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/foot/model/Equipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/foot/model/Equipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/foot/model/Generale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/foot/model/Generale.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/foot/controllers/SimpleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/foot/controllers/SimpleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/foot/model/Data.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/foot/model/Home.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/foot/model/Voiture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/foot/repository/VoitureBaseRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/foot/model/Equipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/foot/model/Equipe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/foot/model/Generale.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/foot/model/Generale.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>

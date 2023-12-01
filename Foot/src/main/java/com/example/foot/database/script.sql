@@ -13,8 +13,8 @@ CREATE TABLE equipe(
     note            double precision,
     type            double precision
 );
-INSERT INTO equipe (nomEquipe,competition,buts,tirpm,rouge,jaune,possession,passeReussi,AerienGagne,note,type) values
-( 'Bayern Munich','Bundesliga',16,18.2,13 ,0,63.9,88.8,12.5,7.12,0),
+INSERT INTO "public"."Equipe" ("nomequipe","competition","buts","tirpm","jaune","rouge","possession","passereussi","Aeriengagne","note","type") values
+('Bayern Munich','Bundesliga',16,18.2,13 ,0,63.9,88.8,12.5,7.12,0),
 ('Paris Saint-Germain','Ligue 1',14,17.8,12 ,0,64.9,89.9,7.7,7.07,0),
 ('Bayer Leverkusen','Bundesliga',16,13.2,15 ,0,55.7,87.5,7.5,6.91,0),
 ('Inter','Serie A',13,14.7,8,0,59.8,86.6,17.8,6.89,0),
@@ -33,30 +33,43 @@ INSERT INTO equipe (nomEquipe,competition,buts,tirpm,rouge,jaune,possession,pass
 ('VfB Stuttgart','Bundesliga',11,13.3,8 ,0,55.9,84.2,15.7,6.72,0),
 ('Chelsea','Premier League',12,12.5,25, 1,59.0,87.8,10,6.71,0),
 ('Everton','Premier League',9,11.2,14, 1,37.8,74.7,18.7,6.70,0),
+('Bayern Munich','Bundesliga',27,21.7,4,1,61.9,88.8,13,7.21,1),
+('Bayer Leverkusen','Bundesliga',21,19.3,8,0,65.5,90.2,11.7,7.05,1),
+('Aston Villa','Premier League',23,15.3,17,0,57.6,86.8,9.5,7.04,1),
+('Liverpool','Premier League',17,21.5,5,1,66.9,87.9,19.5,7.04,1),
+('Manchester City','Premier League',17,12.5,9,2,60.6,90.4,7.5,7.03,1),
+('VfB Stuttgart','Bundesliga',20,18.5,8,0,59.5,87,16.2,7.01,1),
+('Paris Saint-Germain','Ligue 1',20,15.6,5,0,70.8,91,6.4,7.01,1),
+('Real Madrid','LaLiga',15,20.2,11,0,59.6,88.9,8.8,7,1),
+('Newcastle','Premier League',18,14.6,20,0,54,83.6,12.6,6.93,1),
+('RB Leipzig','Bundesliga',19,15.5,9,0,56.9,86.4,9.5,6.91,1),
+('Barcelona','LaLiga',15,16,16,0,65.7,89.1,10,6.89,1),
+('Inter','Serie A',17,17.7,9,0,52,86.2,13,6.89,1),
+('Marseille','Ligue 1',7,15,5,0,52,85.5,10.4,6.89,1),
+('Monaco','Ligue 1',13,13.2,14,0,55.4,83.1,11.5,6.87,1),
+('Atletico Madrid','LaLiga',17,16,11,0,53.4,85.8,13.1,6.84,1),
+('Roma','Serie A',18,14.1,11,0,54.3,84.4,13.4,6.84,1),
+('Lille','Ligue 1',8,12.3,9,1,56.8,83.4,13.2,6.83,1),
+('Arsenal','Premier League',18,15,9,1,61.6,88.3,13.1,6.82,1),
+('Real Betis','LaLiga',10,15.3,14,0,53,86,12.3,6.82,1),
+(' Nice','Ligue 1',7,12.9,11,1,52,86.8,9.7,6.78,1),
 ('Monaco','Ligue 1',14,16,17, 0,54.9,83.6,11,6.70,0);
 
-
-
-CREATE or replace VIEW GENERALE AS
 SELECT
-  ROW_NUMBER() OVER (ORDER BY AVG(note) DESC) AS idEquipe,
-  nomequipe,
-  competition,
-  SUM(buts) AS buts,
-  ROUND(AVG(tirpm)::numeric, 2) AS tirpm,
-  SUM(rouge) AS rouge,
-  SUM(jaune) AS jaune,
-  round(AVG(possession)::numeric,2)AS possession,
-  round(AVG(passereussi)::numeric,2) AS passereussi,
-  round(AVG(aeriengagne)::numeric,2)AS aeriengagne,
-  round(AVG(note)::numeric,2)AS note
-FROM equipe
-GROUP BY nomequipe, competition
-ORDER BY note DESC;
-
-
-
-
-
-
-
+  ROW_NUMBER() OVER (ORDER BY AVG("note") DESC) AS "idEquipe",
+  "nomequipe",
+  "competition",
+  SUM("buts") AS "buts",
+  ROUND(AVG("tirpm")::numeric, 2) AS "tirpm",
+  SUM("rouge") AS "rouge",
+  SUM("jaune") AS "jaune",
+  ROUND(AVG("possession")::numeric, 2) AS "possession",
+  ROUND(AVG("passereussi")::numeric, 2) AS "passereussi",
+  ROUND(AVG("aeriengagne")::numeric, 2) AS "aeriengagne",
+  ROUND(AVG("note")::numeric, 2) AS "note"
+FROM
+  "Equipe"
+GROUP BY
+  "nomequipe", "competition"
+ORDER BY
+  "note" DESC;

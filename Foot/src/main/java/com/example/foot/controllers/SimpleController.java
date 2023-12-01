@@ -35,18 +35,17 @@ public class SimpleController {
         return  user;
     }
     @GetMapping("domicile")
-    public List<Equipe> domicile(int i){
-        System.out.println(i);
-        List<Equipe> domicile = null;
-        if(i!=2){
-            domicile = equipe.findAllByType(i);
-        }
+    public Equipe[] domicile(int i){
+        int type = i;
+        System.out.println(type);
+        Equipe[] domicile = null;
+        domicile = new Equipe().selectEquipe(type);
         return  domicile;
     }
     @GetMapping("generale")
-    public List<Generale> domicile(){
-        List<Generale> domicile = null;
-        domicile = generale.findAll();
+    public Generale[] domicile(){
+        Generale[] domicile = null;
+        domicile = new Generale().selectGenerale();
         return  domicile;
     }
 

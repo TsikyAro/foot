@@ -6,5 +6,6 @@ com\example\foot\model\Users.class
 com\example\foot\model\Equipe.class
 com\example\foot\service\UsersService.class
 com\example\foot\DemoApplication.class
+com\example\foot\model\Connexion.class
 com\example\foot\repository\GeneraleRepository.class
 com\example\foot\model\VoitureBase.class

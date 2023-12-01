@@ -5,8 +5,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
-@Table(name="Generale")
+@Table(name="generale")
 public class Generale {
     @Id
     @Column(name = "idequipe")
@@ -32,9 +38,31 @@ public class Generale {
     @Column(name = "note")
     double note;
 
+    public Generale[]selectGenerale(){
+        Connexion c = new Connexion();
+        ArrayList<Generale> liste = new ArrayList<Generale>();
+        try{
+            Connection con = c.login();
+            Statement stm=con.createStatement();
+            String sql = "SELECT * FROM \"public\".\"generale\" ";
+            System.out.println(sql);
+            ResultSet res=stm.executeQuery(sql);
+            while (res.next()){
+                Generale terre = new Generale(res.getInt(1),res.getString(2),res.getString(3),res.getInt(4),res.getDouble(5),res.getInt(6),res.getInt(7),res.getDouble(8),res.getDouble(9),res.getDouble(10),res.getDouble(11));
+                liste.add(terre);
+            }
+            con.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        Generale[] terra = new Generale[liste.size()];
+        liste.toArray(terra);
+        return terra;
+    }
     public Generale() {
     }
-    public Generale(String nomequipe, String competition, int buts, double tirpm, int rouge, int jaune, double possession, double passeReussi, double aerienGagne, double note) {
+    public Generale(int idEquipe,String nomequipe, String competition, int buts, double tirpm, int rouge, int jaune, double possession, double passeReussi, double aerienGagne, double note) {
+        this.idEquipe = idEquipe;
         this.nomequipe = nomequipe;
         this.competition = competition;
         this.buts = buts;
